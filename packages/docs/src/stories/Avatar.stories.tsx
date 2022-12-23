@@ -8,6 +8,13 @@ export default {
     src: "http://github.com/viniscrv.png",
     alt: "Vinícius de Carvalho",
   },
+  argTypes: {
+    src: {
+      control: {
+        type: "text",
+      },
+    }
+  }
 } as Meta<AvatarProps>;
 
 export const Primary: StoryObj<AvatarProps> = {};
