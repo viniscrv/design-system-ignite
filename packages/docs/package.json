@@ -1,5 +1,5 @@
 {
-  "name": "@ignite-ui/docs",
+  "name": "@vini-ig-ui/docs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -29,9 +29,9 @@
     "vite": "^4.0.2"
   },
   "dependencies": {
-    "@ignite-ui/react": "*",
-    "@ignite-ui/tokens": "*",
-    "@ignite-ui/ts-config": "*",
+    "@vini-ig-ui/react": "*",
+    "@vini-ig-ui/tokens": "*",
+    "@vini-ig-ui/ts-config": "*",
     "phosphor-react": "^1.4.1",
     "polished": "^4.2.2",
     "react": "^18.2.0",
