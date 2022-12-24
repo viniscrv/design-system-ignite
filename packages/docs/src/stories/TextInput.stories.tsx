@@ -1,5 +1,5 @@
 import { StoryObj, Meta } from "@storybook/react";
-import { Box, TextInput, TextInputProps, Text } from "@ignite-ui/react";
+import { Box, TextInput, TextInputProps, Text } from "@vini-ig-ui/react";
 
 export default {
   title: "Form/TextInput",
