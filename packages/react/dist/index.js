@@ -64,7 +64,8 @@ __export(src_exports, {
   Text: () => Text,
   TextArea: () => TextArea,
   TextInput: () => TextInput,
-  Toast: () => Toast2
+  Toast: () => Toast2,
+  Tooltip: () => Tooltip
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -591,7 +592,7 @@ var import_jsx_runtime5 = require("react/jsx-runtime");
 function Toast2({ title, description }) {
   const [open, setOpen] = (0, import_react2.useState)(false);
   return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(ToastRadix.Provider, { swipeDirection: "right", duration: 6e3, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Button, { onClick: () => setOpen(true), children: "Click" }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Button, { onClick: () => setOpen(true), children: "Click me" }),
     /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(ToastWindow, { open, onOpenChange: setOpen, children: [
       /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "content", children: [
         /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(ToastRadix.Title, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Heading, { size: "sm", children: title }) }),
@@ -603,6 +604,38 @@ function Toast2({ title, description }) {
   ] });
 }
 Toast2.displayName = "Toast";
+
+// src/components/Tooltip/index.tsx
+var TooltipRadix2 = __toESM(require("@radix-ui/react-tooltip"));
+
+// src/components/Tooltip/styles.ts
+var import_react3 = require("@stitches/react");
+var TooltipRadix = __toESM(require("@radix-ui/react-tooltip"));
+var TooltipContainer = (0, import_react3.styled)(TooltipRadix.Root, {
+  backgroundColor: "transparent"
+});
+var TooltipTrigger = (0, import_react3.styled)(TooltipRadix.Trigger, {
+  backgroundColor: "transparent",
+  border: 0
+});
+var TooltipContent = (0, import_react3.styled)(TooltipRadix.Content, {
+  backgroundColor: "$gray900",
+  color: "$gray100",
+  padding: "$2 $3",
+  borderRadius: "$sm"
+});
+
+// src/components/Tooltip/index.tsx
+var import_jsx_runtime6 = require("react/jsx-runtime");
+function Tooltip({ element, content }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(TooltipRadix2.Provider, { delayDuration: 300, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(TooltipRadix2.Root, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(TooltipTrigger, { children: element }),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(TooltipRadix2.Portal, { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(TooltipContent, { sideOffset: 5, children: [
+      content,
+      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(TooltipRadix2.Arrow, { width: 14, fill: "#121214" })
+    ] }) })
+  ] }) });
+}
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -614,5 +647,6 @@ Toast2.displayName = "Toast";
   Text,
   TextArea,
   TextInput,
-  Toast
+  Toast,
+  Tooltip
 });

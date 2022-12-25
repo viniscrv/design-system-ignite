@@ -16,7 +16,7 @@ export function Toast({ title, description }: ToastProps) {
 
   return (
     <ToastRadix.Provider swipeDirection="right" duration={6000}>
-      <Button onClick={() => setOpen(true)}>Click</Button>
+      <Button onClick={() => setOpen(true)}>Click me</Button>
       <ToastWindow open={open} onOpenChange={setOpen}>
         <div className="content">
           <ToastRadix.Title>

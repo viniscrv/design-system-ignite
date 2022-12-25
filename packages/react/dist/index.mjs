@@ -553,7 +553,7 @@ import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
 function Toast2({ title, description }) {
   const [open, setOpen] = useState(false);
   return /* @__PURE__ */ jsxs4(ToastRadix.Provider, { swipeDirection: "right", duration: 6e3, children: [
-    /* @__PURE__ */ jsx5(Button, { onClick: () => setOpen(true), children: "Click" }),
+    /* @__PURE__ */ jsx5(Button, { onClick: () => setOpen(true), children: "Click me" }),
     /* @__PURE__ */ jsxs4(ToastWindow, { open, onOpenChange: setOpen, children: [
       /* @__PURE__ */ jsxs4("div", { className: "content", children: [
         /* @__PURE__ */ jsx5(ToastRadix.Title, { children: /* @__PURE__ */ jsx5(Heading, { size: "sm", children: title }) }),
@@ -565,6 +565,38 @@ function Toast2({ title, description }) {
   ] });
 }
 Toast2.displayName = "Toast";
+
+// src/components/Tooltip/index.tsx
+import * as TooltipRadix2 from "@radix-ui/react-tooltip";
+
+// src/components/Tooltip/styles.ts
+import { styled as styled2 } from "@stitches/react";
+import * as TooltipRadix from "@radix-ui/react-tooltip";
+var TooltipContainer = styled2(TooltipRadix.Root, {
+  backgroundColor: "transparent"
+});
+var TooltipTrigger = styled2(TooltipRadix.Trigger, {
+  backgroundColor: "transparent",
+  border: 0
+});
+var TooltipContent = styled2(TooltipRadix.Content, {
+  backgroundColor: "$gray900",
+  color: "$gray100",
+  padding: "$2 $3",
+  borderRadius: "$sm"
+});
+
+// src/components/Tooltip/index.tsx
+import { jsx as jsx6, jsxs as jsxs5 } from "react/jsx-runtime";
+function Tooltip({ element, content }) {
+  return /* @__PURE__ */ jsx6(TooltipRadix2.Provider, { delayDuration: 300, children: /* @__PURE__ */ jsxs5(TooltipRadix2.Root, { children: [
+    /* @__PURE__ */ jsx6(TooltipTrigger, { children: element }),
+    /* @__PURE__ */ jsx6(TooltipRadix2.Portal, { children: /* @__PURE__ */ jsxs5(TooltipContent, { sideOffset: 5, children: [
+      content,
+      /* @__PURE__ */ jsx6(TooltipRadix2.Arrow, { width: 14, fill: "#121214" })
+    ] }) })
+  ] }) });
+}
 export {
   Avatar2 as Avatar,
   Box,
@@ -575,5 +607,6 @@ export {
   Text,
   TextArea,
   TextInput,
-  Toast2 as Toast
+  Toast2 as Toast,
+  Tooltip
 };
