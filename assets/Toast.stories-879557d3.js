@@ -1,0 +1,2 @@
+import{d as t}from"./index-0adc7c2d.js";import"./index-1e2ca6ef.js";import"./es.object.get-own-property-descriptor-b0ef2764.js";import"./index-4c74331d.js";import"./jsx-runtime-fa3dd565.js";const m={title:"Surfaces/Toast",component:t,args:{title:"Lorem ipsum",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit."},argTypes:{children:{control:{type:null}}}},a={},p=["Primary"];export{a as Primary,p as __namedExportsOrder,m as default};
+//# sourceMappingURL=Toast.stories-879557d3.js.map

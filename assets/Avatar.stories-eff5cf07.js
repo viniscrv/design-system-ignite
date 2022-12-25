@@ -1,0 +1,2 @@
+import{A as t}from"./index-0adc7c2d.js";import"./index-1e2ca6ef.js";import"./es.object.get-own-property-descriptor-b0ef2764.js";import"./index-4c74331d.js";import"./jsx-runtime-fa3dd565.js";const c={title:"Data display/Avatar",component:t,args:{src:"http://github.com/viniscrv.png",alt:"Vinícius de Carvalho"},argTypes:{src:{control:{type:"text"}}}},p={},e={args:{src:void 0}},m=["Primary","WithFallback"];export{p as Primary,e as WithFallback,m as __namedExportsOrder,c as default};
+//# sourceMappingURL=Avatar.stories-eff5cf07.js.map

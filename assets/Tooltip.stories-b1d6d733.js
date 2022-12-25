@@ -1,0 +1,2 @@
+import{e as o,a as r}from"./index-0adc7c2d.js";import{j as t}from"./jsx-runtime-fa3dd565.js";import"./index-1e2ca6ef.js";import"./es.object.get-own-property-descriptor-b0ef2764.js";import"./index-4c74331d.js";const p={title:"Surfaces/Tooltip",component:o,args:{element:t(r,{variant:"primary",children:"Hover me"}),content:"Lorem ipsum"},argTypes:{children:{control:{type:null}}}},s={},l=["Primary"];export{s as Primary,l as __namedExportsOrder,p as default};
+//# sourceMappingURL=Tooltip.stories-b1d6d733.js.map
