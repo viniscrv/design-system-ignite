@@ -29,6 +29,7 @@
     "vite": "^4.0.2"
   },
   "dependencies": {
+    "@radix-ui/react-toast": "^1.1.2",
     "@vini-ig-ui/react": "*",
     "@vini-ig-ui/tokens": "*",
     "@vini-ig-ui/ts-config": "*",

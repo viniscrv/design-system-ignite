@@ -63,7 +63,8 @@ __export(src_exports, {
   MultiStep: () => MultiStep,
   Text: () => Text,
   TextArea: () => TextArea,
-  TextInput: () => TextInput
+  TextInput: () => TextInput,
+  Toast: () => Toast2
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -82,7 +83,8 @@ var colors = {
   ignite300: "#00B37E",
   ignite500: "#00875F",
   ignite700: "#015F43",
-  ignite900: "#00291D"
+  ignite900: "#00291D",
+  test: "#fff"
 };
 var space = {
   1: "0.25rem",
@@ -524,6 +526,83 @@ function MultiStep({ size, currentStep = 1 }) {
   ] });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/Toast/index.tsx
+var ToastRadix = __toESM(require("@radix-ui/react-toast"));
+var import_phosphor_react3 = require("phosphor-react");
+var import_react2 = require("react");
+
+// src/components/Toast/styles.ts
+var Toast = __toESM(require("@radix-ui/react-toast"));
+var slideIn2 = keyframes({
+  from: {
+    opacity: 0,
+    transform: "translateX(100%)"
+  },
+  to: {
+    opacity: 1,
+    transform: "translateX(0)"
+  }
+});
+var slideOut2 = keyframes({
+  from: {
+    opacity: 1,
+    transform: "translateX(0)"
+  },
+  to: {
+    opacity: 0,
+    transform: "translateX(100%)"
+  }
+});
+var ToastWindow = styled(Toast.Root, {
+  backgroundColor: "$gray800",
+  border: "1px solid $gray500",
+  padding: "$4",
+  borderRadius: "$md",
+  position: "fixed",
+  bottom: "$4",
+  right: "$4",
+  width: "390px",
+  maxWidth: "100vw",
+  display: "flex",
+  justifyContent: "space-between",
+  p: {
+    color: "$gray200"
+  },
+  button: {
+    backgroundColor: "transparent",
+    border: 0,
+    color: "$gray100",
+    cursor: "pointer",
+    padding: 0,
+    lineHeight: 0,
+    alignSelf: "start"
+  },
+  "&[data-state='open']": {
+    animation: `${slideIn2} 240ms ease-out`
+  },
+  "&[data-state='closed']": {
+    animation: `${slideOut2} 240ms ease-out`
+  }
+});
+
+// src/components/Toast/index.tsx
+var import_jsx_runtime5 = require("react/jsx-runtime");
+function Toast2({ title, description }) {
+  const [open, setOpen] = (0, import_react2.useState)(false);
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(ToastRadix.Provider, { swipeDirection: "right", duration: 6e3, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Button, { onClick: () => setOpen(true), children: "Click" }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(ToastWindow, { open, onOpenChange: setOpen, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: "content", children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(ToastRadix.Title, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Heading, { size: "sm", children: title }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(ToastRadix.Description, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Text, { children: description }) })
+      ] }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(ToastRadix.Close, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_phosphor_react3.X, { size: 24 }) }) })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(ToastRadix.Viewport, {})
+  ] });
+}
+Toast2.displayName = "Toast";
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -534,5 +613,6 @@ MultiStep.displayName = "MultiStep";
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  Toast
 });
